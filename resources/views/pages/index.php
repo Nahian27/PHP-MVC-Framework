@@ -1,6 +1,6 @@
-<?php require APPROOT . '/resources/views/inc/header.php'?>
+<?php require APPROOT . '/resources/views/inc/header.php' ?>
 <h1>
-    <?= $props['title']?>
+    <?= $props['title'] ?>
 </h1>
 <a href="pages/about">About</a>
-<?php require APPROOT . '/resources/views/inc/footer.php'?>
+<?php require APPROOT . '/resources/views/inc/footer.php' ?>

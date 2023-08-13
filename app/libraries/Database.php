@@ -31,10 +31,10 @@ class Database
     {
         $this->stmt = $this->dbh->prepare($sql);
     }
-    public function bind($param,$value,$type=null): void
+
+    public function bind($param, $value, $type = null): void
     {
-        if(is_null($type))
-        {
+        if (is_null($type)) {
             $type = match (true) {
                 is_int($value) => PDO::PARAM_INT,
                 is_bool($value) => PDO::PARAM_BOOL,

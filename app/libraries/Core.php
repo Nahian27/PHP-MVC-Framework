@@ -10,13 +10,13 @@ class Core
     {
         $url = $this->getUrl();
 
-        if (file_exists(sprintf("../resources/controllers/%s.php", ucwords($url[0])))) {
+        if (file_exists(sprintf(__DIR__ . "/../../resources/controllers/%s.php", ucwords($url[0])))) {
             $controllerClassName = ucwords($url[0]);
             unset($url[0]);
         } else {
             $controllerClassName = 'Pages';
         }
-        require_once sprintf("../resources/controllers/%s.php", $controllerClassName);
+        require_once sprintf(__DIR__ . "/../../resources/controllers/%s.php", $controllerClassName);
         $this->currentController = new $controllerClassName;
 
         if (isset($url[1])) {
