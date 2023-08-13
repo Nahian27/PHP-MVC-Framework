@@ -7,7 +7,9 @@ class Database
     private string $dbname = DB_NAME;
     private string $pass = DB_PASSWORD;
 
-    private $dbh, $stmt, $error;
+    private $stmt;
+    private string $error;
+    private PDO $dbh;
 
     public function __construct()
     {
@@ -29,7 +31,7 @@ class Database
     {
         $this->stmt = $this->dbh->prepare($sql);
     }
-    public function bind($param,$value,$type=null)
+    public function bind($param,$value,$type=null): void
     {
         if(is_null($type))
         {
